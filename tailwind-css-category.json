@@ -1,0 +1,61 @@
+{
+  "tailwind": {
+    "layout": {
+      "boxModel": {
+        "padding": ["p", "pt", "pr", "pb", "pl", "px", "py"],
+        "margin": ["m", "mt", "mr", "mb", "ml", "mx", "my"],
+        "spaceBetween": ["space-x", "space-y"],
+        "width": ["w", "min-w", "max-w"],
+        "height": ["h", "min-h", "max-h"]
+      },
+      "display": ["block", "inline-block", "flex", "grid", "hidden"],
+      "positioning": ["absolute", "relative", "fixed", "sticky"],
+      "zIndex": ["z"]
+    },
+    "flexboxAndGrid": {
+      "flexbox": {
+        "flex": ["flex", "flex-row", "flex-col"],
+        "growShrink": ["flex-grow", "flex-shrink"],
+        "justifyContent": ["justify-start", "justify-end", "justify-center"],
+        "alignItems": ["items-start", "items-center", "items-end"],
+        "gap": ["gap", "gap-x", "gap-y"]
+      },
+      "grid": {
+        "templateColumns": ["grid-cols", "col-span"],
+        "templateRows": ["grid-rows", "row-span"],
+        "gap": ["gap", "gap-x", "gap-y"]
+      }
+    },
+    "typography": {
+      "textStyle": ["text", "font", "leading", "tracking"],
+      "alignment": ["text-left", "text-center", "text-right"],
+      "decoration": ["underline", "line-through", "no-underline"],
+      "textColor": ["text-{color}"]
+    },
+    "spacing": ["space-x", "space-y", "m", "p"],
+    "borders": {
+      "borderRadius": ["rounded", "rounded-t", "rounded-b"],
+      "borderWidth": ["border", "border-t", "border-r"],
+      "borderColor": ["border-{color}"]
+    },
+    "backgrounds": {
+      "backgroundColor": ["bg-{color}"],
+      "backgroundSize": ["bg-cover", "bg-contain"],
+      "backgroundPosition": ["bg-center", "bg-top"]
+    },
+    "effects": {
+      "boxShadow": ["shadow", "shadow-md", "shadow-lg"],
+      "opacity": ["opacity-{value}"],
+      "blendMode": ["mix-blend-{mode}"]
+    },
+    "interactivity": {
+      "cursor": ["cursor-pointer", "cursor-default"],
+      "userSelect": ["select-none", "select-text"],
+      "visibility": ["visible", "invisible"]
+    },
+    "animation": {
+      "transition": ["transition", "duration", "ease"],
+      "transform": ["scale", "rotate", "translate"]
+    }
+  }
+}

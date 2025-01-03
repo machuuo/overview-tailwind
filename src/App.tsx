@@ -1,5 +1,7 @@
+import Pages from "./pages/Index";
+
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return <Pages pageName="tailwind" />;
 }
 
 export default App;
