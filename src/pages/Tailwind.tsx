@@ -7,10 +7,14 @@ const Tailwind = () => {
   const handleButton = () => {};
 
   return (
-    <div>
-      <Span label="리스트 선택" />
-      {/* TODO: 리스트 추가 */}
-      <Button label="추가" onClick={handleButton} />
+    <div className="flex flex-col h-screen">
+      <div className="h-40 bg-blue-200 p-4">
+        <p>Tailwind CSS list</p>
+        <Span label="리스트 선택" />
+        {/* TODO: 리스트 추가 */}
+        <Button label="추가" onClick={handleButton} />
+      </div>
+      <div className="flex-1 bg-green-200 p-4">Content</div>
     </div>
   );
 };
