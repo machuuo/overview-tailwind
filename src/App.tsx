@@ -1,16 +1,17 @@
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
 
-import Nav from "./components/Nav/Nav";
 import Pages from "./pages/Index";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   const page = useSelector((state: RootState) => state.pages.page);
 
   return (
     <>
-      <Nav />
-      <Pages pageName={page} />
+      <Layout>
+        <Pages pageName={page} />
+      </Layout>
     </>
   );
 }
