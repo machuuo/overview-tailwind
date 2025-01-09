@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Button from "../components/Button";
-import ModalForImage from "../components/Modal/Modal";
+import Modal from "../components/Modal/Modal";
 
 import tradeRouteImg from "../assets/물교경로.png";
 import 페라 from "../assets/페라화산.png";
@@ -58,7 +58,9 @@ const MabiTrade = () => {
       <h1 className="text-xl font-bold mb-4">물물교역 아이템 리스트</h1>
       <Button label="교역루트" onClick={() => toggleModal("route")} />
       <Button label="구매할 목록" onClick={() => toggleModal("barter")} />
-      {modal && <ModalForImage images={images} toggleModal={toggleModal} />}
+      {modal && (
+        <Modal type="mabinogi" images={images} toggleModal={toggleModal} />
+      )}
       <div className="m-2">
         <ul className="space-y-2">
           {items.map((item, index) => (

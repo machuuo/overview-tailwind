@@ -1,11 +1,17 @@
 interface ModalProps {
+  type?: string;
   images: string[];
   toggleModal: (type: string | null) => void;
 }
 
-const ModalForImage: React.FC<ModalProps> = ({ images, toggleModal }) => {
+const Modal: React.FC<ModalProps> = ({ type, images, toggleModal }) => {
+  const ModalDivStyle =
+    type === "mabinogi"
+      ? "relative bg-white p-4 rounded shadow-lg w-4/5 h-4/5 overflow-y-auto"
+      : "relative bg-white p-4 rounded shadow-lg w-4/5 h-4/5";
+
   return (
-    <div className="modal_overlay relative">
+    <div className="relative modal_overlay">
       {/* Modal */}
       <div
         className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
@@ -13,7 +19,7 @@ const ModalForImage: React.FC<ModalProps> = ({ images, toggleModal }) => {
       >
         {/* Modal Content */}
         <div
-          className="relative bg-white p-4 rounded shadow-lg w-4/5 h-4/5"
+          className={ModalDivStyle}
           onClick={(e) => e.stopPropagation()} // Prevent click propagation
         >
           <button
@@ -26,7 +32,7 @@ const ModalForImage: React.FC<ModalProps> = ({ images, toggleModal }) => {
             <img
               src={images[0]}
               alt="Sample"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-fill"
             />
           ) : (
             images.map((image) => (
@@ -34,7 +40,7 @@ const ModalForImage: React.FC<ModalProps> = ({ images, toggleModal }) => {
                 key={image}
                 src={image}
                 alt="Sample"
-                className="w-full h-full object-cover"
+                className="w-1/2 object-contain"
               />
             ))
           )}
@@ -44,4 +50,4 @@ const ModalForImage: React.FC<ModalProps> = ({ images, toggleModal }) => {
   );
 };
 
-export default ModalForImage;
+export default Modal;
