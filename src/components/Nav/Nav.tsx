@@ -2,7 +2,7 @@ import { pageActions } from "../../store/page-slice";
 import { useDispatch } from "react-redux";
 import NaviItem from "./NavItem";
 
-const naviList = ["tailwind", "mabinogi"] as const;
+const naviList = ["tailwind", "mabitrade"] as const;
 
 export type NaviListType = (typeof naviList)[number];
 
@@ -15,7 +15,7 @@ const Nav = () => {
 
   return (
     <div className="">
-      <ul className="flex items-center space-x-4">
+      <ul className="flex items-center space-x-4 bg-slate-800">
         {naviList.map((item) => (
           <NaviItem key={item} title={item} clickHandler={handlePage} />
         ))}

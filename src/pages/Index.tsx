@@ -9,7 +9,7 @@ const Pages: React.FC<PageProps> = ({ pageName }) => {
   return (
     <div>
       {pageName === "tailwind" && <Tailwind />}
-      {pageName === "mabinogi" && <MabiTrade />}
+      {pageName === "mabitrade" && <MabiTrade />}
     </div>
   );
 };

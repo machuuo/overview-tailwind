@@ -1,3 +1,4 @@
+import Span from "../Span";
 import { NaviListType } from "./Nav";
 
 interface NavItemProps {
@@ -18,7 +19,7 @@ const NavItem: React.FC<NavItemProps> = ({ title, clickHandler }) => {
       >
         <path d="M10 2a1 1 0 01.993.883L11 3v10a1 1 0 01-1.993.117L9 13V3a1 1 0 011-1zm0 14a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" />
       </svg>
-      <span>{title}</span>
+      <Span label={title} />
     </li>
   );
 };

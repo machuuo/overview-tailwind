@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Button from "../components/Button";
 import Modal from "../components/Modal/Modal";
+import Notification from "../components/Notification/Notification";
 
 import tradeRouteImg from "../assets/물교경로.png";
 import 페라 from "../assets/페라화산.png";
@@ -38,9 +39,13 @@ const items = [
 const MabiTrade = () => {
   const [modal, setModal] = useState<string | null>(null);
   const [images, setImages] = useState<string[]>([]);
+  const [copyText, setCopyText] = useState("");
 
-  const copyToClipboard = (text: string) => {
+  const copyToClipboard = async (text: string) => {
     navigator.clipboard.writeText(text);
+    const copiedText =
+      '"' + (await navigator.clipboard.readText()) + '" ' + "복사 완료";
+    setCopyText(copiedText);
   };
 
   const toggleModal = (type: string | null): void => {
@@ -55,11 +60,12 @@ const MabiTrade = () => {
 
   return (
     <div className="p-4">
+      <Notification text={copyText} timer={1} />
       <h1 className="text-xl font-bold mb-4">물물교역 아이템 리스트</h1>
       <Button label="교역루트" onClick={() => toggleModal("route")} />
       <Button label="구매할 목록" onClick={() => toggleModal("barter")} />
       {modal && (
-        <Modal type="mabinogi" images={images} toggleModal={toggleModal} />
+        <Modal type="mabitrade" images={images} toggleModal={toggleModal} />
       )}
       <div className="m-2">
         <ul className="space-y-2">

@@ -6,7 +6,7 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ type, images, toggleModal }) => {
   const ModalDivStyle =
-    type === "mabinogi"
+    type === "mabitrade"
       ? "relative bg-white p-4 rounded shadow-lg w-4/5 h-4/5 overflow-y-auto"
       : "relative bg-white p-4 rounded shadow-lg w-4/5 h-4/5";
 
